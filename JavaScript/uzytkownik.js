@@ -1,4 +1,21 @@
 ﻿function logowanie(){
+	$.ajax({
+		url: "http://localhost/library/php/uzytkownik/logowanie.php",
+		method: "post",
+		dataType: "json"
+	})
+	.done(function(request){
+		alert(request);
+	})
+	.fail(function(error){
+		alert(error.status);
+	});//ajax
+	//alert("Zalogowano poprawnie");
+}
+function rejestracja(){
+	alert("Dziękujemy za poprawne wypełnienie formularza. Wysłaliśmy do ciebie maila");
+}
+function logowanieForm(){
 	$("#rejestracja").html("Zarejestruj się");
 	$("#logowanie").html(`
 		<h2>Podaj dane logowania</h2>
@@ -11,14 +28,14 @@
 			<input type="password" name="password">
 		</p>
 		<p>
-			<input type="submit" value="Zaloguj się">
+			<input type="submit" id="logowanieSubmit" value="Zaloguj się">
 		</p>
 		<p>
-			<button id="zwin_logowanie" name="zwin" value="zwin">Zamknij</button>
+			<button id="zwinLogowanie" name="zwin" value="zwin">Zamknij</button>
 		</p>
 	`);
 }
-function rejestracja(){
+function rejestracjaForm(){
 	$("#logowanie").html("Zaloguj się");
 	$("#rejestracja").html(`
 		<h2>Aby się zarejestrować, musisz najpierw podać nam kilka informacji o sobie</h2>
@@ -47,10 +64,10 @@ function rejestracja(){
 			<input type="password" name="password2">
 		</p>
 		<p>
-			<input type="submit" value="Zarejestruj się">
+			<input type="submit" id="rejestracjaSubmit" value="Zarejestruj się">
 		</p>
 		<p>
-			<button id="zwin_rejestracja" name="zwin" value="zwin">Zamknij</button>
+			<button id="zwinRejestracja" name="zwin" value="zwin">Zamknij</button>
 		</p>
 	`);
 }
