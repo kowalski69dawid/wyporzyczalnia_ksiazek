@@ -26,7 +26,7 @@ function rejestracja(){
 }
 function logowanieForm(){
 $("#rejestracjaForm").hide();
-$"#rejestracja".show();
+$("#rejestracja").show();
 $("#logowanie").hide();
 	$("#logowanieForm").html(`
 		<h2>Podaj dane logowania</h2>
@@ -49,7 +49,7 @@ $("#logowanieForm").show();
 }
 function rejestracjaForm(){
 $("#logowanieForm").hide();
-$"#logowanie".show();
+$("#logowanie").show();
 $("#rejestracja").hide();
 	$("#rejestracjaForm").html(`
 		<h2>Aby się zarejestrować, musisz najpierw podać nam kilka informacji o sobie</h2>
