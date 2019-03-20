@@ -1,17 +1,19 @@
 ﻿function logowanie(){
+var json={
+				user: $("#user").val(),
+				password: $("#password").val()
+		};
+console.log(json);
 	$.ajax({
 		url: "php/uzytkownik/logowanie.php",
 		method: "post",
 		dataType: "json",
-		data:
-			{
-				user: $("#user").val(),
-				password: $("#password").val()
-		}
+		data: json
 	})
 	.done(function(request){
 		alert("It works");
-		alert(request);
+console.log(request);
+//		alert(request[0]["user"]);
 	})
 	.fail(function(error){
 		alert(error.status);
