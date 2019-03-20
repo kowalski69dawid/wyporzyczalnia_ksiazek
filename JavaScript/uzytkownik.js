@@ -1,10 +1,16 @@
 ﻿function logowanie(){
 	$.ajax({
-		url: "http://localhost/library/php/uzytkownik/logowanie.php",
+		url: "php/uzytkownik/logowanie.php",
 		method: "post",
-		dataType: "json"
+		dataType: "json",
+		data:
+			{
+				user: $("#user").val(),
+				password: $("#password").val()
+		}
 	})
 	.done(function(request){
+		alert("It works");
 		alert(request);
 	})
 	.fail(function(error){
@@ -21,11 +27,11 @@ function logowanieForm(){
 		<h2>Podaj dane logowania</h2>
 		<p>
 			Login:
-			<input type="text" name="user">
+			<input type="text" id="user">
 		</p>
 		<p>
 			Hasło:
-			<input type="password" name="password">
+			<input type="password" id="password">
 		</p>
 		<p>
 			<input type="submit" id="logowanieSubmit" value="Zaloguj się">
