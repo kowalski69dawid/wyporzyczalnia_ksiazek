@@ -4,6 +4,7 @@ var json={
 				password: $("#password").val()
 		};
 console.log(json);
+$("#content").html($("#user").val());
 	$.ajax({
 		url: "php/uzytkownik/logowanie.php",
 		method: "post",
@@ -25,7 +26,8 @@ function rejestracja(){
 }
 function logowanieForm(){
 	$("#rejestracja").html("Zarejestruj się");
-	$("#logowanie").html(`
+$("#logowanie").hide();
+	$("#logowanieForm").html(`
 		<h2>Podaj dane logowania</h2>
 		<p>
 			Login:
@@ -42,10 +44,11 @@ function logowanieForm(){
 			<button id="zwinLogowanie" name="zwin" value="zwin">Zamknij</button>
 		</p>
 	`);
+$("#logowanieForm").show();
 }
 function rejestracjaForm(){
 	$("#logowanie").html("Zaloguj się");
-	$("#rejestracja").html(`
+	$("#rejestracjaForm").html(`
 		<h2>Aby się zarejestrować, musisz najpierw podać nam kilka informacji o sobie</h2>
 		<p>
 			Imię:

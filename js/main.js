@@ -1,4 +1,6 @@
 ﻿$(document).ready(function(){
+$("#logowanieForm").hide();
+$("#rejestracjaForm").hide();
 $("#logowanie").click(logowanieForm);
 $("#rejestracja").click(rejestracjaForm);
 $(document).on("click", "#zwinLogowanie", function(){
